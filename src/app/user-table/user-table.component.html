@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users$ | async">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>
+        <button type="button" class="btn btn-secondary mr-2">EDIT</button>
+        <button type="button" class="btn btn-danger" (click)="onDeleteUser(user.id)">DELETE</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
